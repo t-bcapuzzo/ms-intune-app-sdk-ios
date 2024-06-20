@@ -16,6 +16,6 @@ let package = Package(
         // .target(name: "MyLibrary", dependencies: ["Utility"]),
         // .testTarget(name: "MyLibraryTests", dependencies: ["MyLibrary"]),
         // .binaryTarget(name: "IntuneMAM", url: "https://github.com/microsoftconnect/ms-intune-app-sdk-ios/releases/download/1.3.3/MSAL.zip", checksum: "INCOMPLETE"), // Remote Binary Package
-        .binaryTarget(name: "IntuneMAM", url: "/IntuneMAMSwift.xcframework") // Local Binary Package
+        .binaryTarget(name: "IntuneMAMSwift", url: "IntuneMAMSwift.xcframework") // Local Binary Package
     ]
 )
