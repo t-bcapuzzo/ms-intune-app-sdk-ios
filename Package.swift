@@ -9,9 +9,9 @@ let package = Package(
     products: [
         .library(name: "IntuneMAM", targets: ["IntuneMAM"])
     ],
-    dependencies: [
+    // dependencies: [
         // .package(url: "https://url/of/another/package/named/utility", from: "1.0.0")
-    ],
+    // ],
     targets: [
         // .target(name: "MyLibrary", dependencies: ["Utility"]),
         // .testTarget(name: "MyLibraryTests", dependencies: ["MyLibrary"]),
@@ -19,4 +19,3 @@ let package = Package(
         .binaryTarget(name: "IntuneMAM", url: "/IntuneMAMSwift.xcframework") // Local Binary Package
     ]
 )
-
