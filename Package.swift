@@ -8,7 +8,10 @@ let package = Package(
     ],
     products: [
         .library(name: "IntuneMAMSwift", targets: ["IntuneMAMSwift"]),
-        .library(name: "IntuneMAMStatic", targets: ["IntuneMAMStatic"])
+        .library(name: "IntuneMAMStatic", targets: ["IntuneMAMStatic"]),
+        .library(name: "IntuneMAMTelemetry", targets: ["IntuneMAMTelemetry"]),
+        .library(name: "libIntuneMAMSwift", targets: ["libIntuneMAMSwift"]),
+        .library(name: "libIntuneMAMSwiftFileProvider", targets: ["libIntuneMAMSwiftFileProvider"])
     ],
     targets: [
         // Local Binary Packages
@@ -17,7 +20,14 @@ let package = Package(
         .binaryTarget(name: "IntuneMAMSwift", 
                       dependencies: ["IntuneMAMSwiftStub"],
                       path: "./IntuneMAMSwift.xcframework")
-        .binaryTarget(name: "IntuneMAMStatic", path: "./IntuneMAMStatic.xcframework")
+        .binaryTarget(name: "IntuneMAMStatic", 
+                      path: "./IntuneMAMStatic.xcframework"),
+        .binaryTarget(name: "IntuneMAMTelemetry",
+                      path: "./IntuneMAMTelemetry.xcframework"),
+        .binaryTarget(name: "libIntuneMAMSwift",
+                      path: "./libIntuneMAMSwift.xcframework"),
+        .binaryTarget(name: "libIntuneMAMSwiftFileProvider",
+                      path: "./libIntuneMAMSwiftFileProvider.xcframework")
         
         // Remote Binary Packages
         // .binaryTarget(name: "IntuneMAM",
