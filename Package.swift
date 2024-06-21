@@ -10,14 +10,18 @@ let package = Package(
         .library(name: "IntuneMAMSwift", targets: ["IntuneMAMSwift"]),
         .library(name: "IntuneMAMStatic", targets: ["IntuneMAMStatic"])
     ],
-    // dependencies: [
-        // .package(url: "https://url/of/another/package/named/utility", from: "1.0.0")
-    // ],
     targets: [
-        // .target(name: "MyLibrary", dependencies: ["Utility"]),
-        // .testTarget(name: "MyLibraryTests", dependencies: ["MyLibrary"]),
-        // .binaryTarget(name: "IntuneMAM", url: "https://github.com/microsoftconnect/ms-intune-app-sdk-ios/releases/download/1.3.3/MSAL.zip", checksum: "INCOMPLETE"), // Remote Binary Package
-        .binaryTarget(name: "IntuneMAMSwift", path: "./IntuneMAMSwift.xcframework") // Local Binary Package
-        .binaryTarget(name: "IntuneMAMStatic", path: "./IntuneMAMStatic.xcframework") // Local Binary Package
+        // Local Binary Packages
+        .binaryTarget(name: "IntuneMAMSwiftStub",
+                      path: "./IntuneMAMSwiftStub.xcframework")
+        .binaryTarget(name: "IntuneMAMSwift", 
+                      dependencies: ["IntuneMAMSwiftStub"],
+                      path: "./IntuneMAMSwift.xcframework")
+        .binaryTarget(name: "IntuneMAMStatic", path: "./IntuneMAMStatic.xcframework")
+        
+        // Remote Binary Packages
+        // .binaryTarget(name: "IntuneMAM",
+        //              url: "https://github.com/microsoftconnect/ms-intune-app-sdk-ios/releases/download/t3/??.zip",
+        //              checksum: "INCOMPLETE"),
     ]
 )
