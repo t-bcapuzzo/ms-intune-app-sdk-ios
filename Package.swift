@@ -16,18 +16,30 @@ let package = Package(
     targets: [
         // Local Binary Packages
         .binaryTarget(name: "IntuneMAMSwiftStub",
-                      path: "./IntuneMAMSwiftStub.xcframework")
-        .binaryTarget(name: "IntuneMAMSwift", 
+                      path: "./IntuneMAMSwiftStub.xcframework"
+                     ),
+        .binaryTarget(name: "IntuneMAMSwift",
                       dependencies: ["IntuneMAMSwiftStub"],
-                      path: "./IntuneMAMSwift.xcframework")
-        .binaryTarget(name: "IntuneMAMStatic", 
-                      path: "./IntuneMAMStatic.xcframework"),
+                      path: "./IntuneMAMSwift.xcframework"
+                     ),
+        .binaryTarget(name: "IntuneMAMStatic",
+                      dependencies: ["IntuneMAMSwiftStub"],
+                      path: "./IntuneMAMStatic.xcframework"
+                     ),
         .binaryTarget(name: "IntuneMAMTelemetry",
-                      path: "./IntuneMAMTelemetry.xcframework"),
+                      path: "./IntuneMAMTelemetry.xcframework"
+                     ),
+        .binaryTarget(name: "IntuneMAMResources",
+                      path: "./IntuneMAMResources.bundle"
+                     ),
         .binaryTarget(name: "libIntuneMAMSwift",
-                      path: "./libIntuneMAMSwift.xcframework")
+                      dependencies: ["IntuneMAMSwiftStub", "IntuneMAMResources"],
+                      path: "./libIntuneMAMSwift.xcframework"
+                     ),
         .binaryTarget(name: "libIntuneMAMSwiftFileProvider",
-                      path: "./libIntuneMAMSwiftFileProvider.xcframework")
+                      dependencies: ["IntuneMAMSwiftStub", "IntuneMAMResources"],
+                      path: "./libIntuneMAMSwiftFileProvider.xcframework"
+                     )
         
         // Remote Binary Packages
         // .binaryTarget(name: "IntuneMAM",
