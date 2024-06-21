@@ -7,7 +7,7 @@ let package = Package(
         .macOS(.v10_15), .iOS(.v14) // Check if these are the correct versions
     ],
     products: [
-        .library(name: "IntuneMAM", targets: ["IntuneMAMSwift"])
+        .library(name: "IntuneMAM", targets: ["IntuneMAMSwift", "IntuneMAMStatic"])
     ],
     // dependencies: [
         // .package(url: "https://url/of/another/package/named/utility", from: "1.0.0")
@@ -17,5 +17,6 @@ let package = Package(
         // .testTarget(name: "MyLibraryTests", dependencies: ["MyLibrary"]),
         // .binaryTarget(name: "IntuneMAM", url: "https://github.com/microsoftconnect/ms-intune-app-sdk-ios/releases/download/1.3.3/MSAL.zip", checksum: "INCOMPLETE"), // Remote Binary Package
         .binaryTarget(name: "IntuneMAMSwift", path: "./IntuneMAMSwift.xcframework") // Local Binary Package
+        .binaryTarget(name: "IntuneMAMStatic", path: "./IntuneMAMStatic.xcframework") // Local Binary Package
     ]
 )
