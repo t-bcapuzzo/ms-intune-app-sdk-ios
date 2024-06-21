@@ -7,7 +7,8 @@ let package = Package(
         .macOS(.v10_15), .iOS(.v14) // Check if these are the correct versions
     ],
     products: [
-        .library(name: "IntuneMAM", targets: ["IntuneMAMSwift", "IntuneMAMStatic"])
+        .library(name: "IntuneMAMSwift", targets: ["IntuneMAMSwift"]),
+        .library(name: "IntuneMAMStatic", targets: ["IntuneMAMStatic"])
     ],
     // dependencies: [
         // .package(url: "https://url/of/another/package/named/utility", from: "1.0.0")
