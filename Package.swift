@@ -25,7 +25,7 @@ let package = Package(
         .binaryTarget(name: "IntuneMAMTelemetry",
                       path: "./IntuneMAMTelemetry.xcframework"),
         .binaryTarget(name: "libIntuneMAMSwift",
-                      path: "./libIntuneMAMSwift.xcframework"),
+                      path: "./libIntuneMAMSwift.xcframework")
         .binaryTarget(name: "libIntuneMAMSwiftFileProvider",
                       path: "./libIntuneMAMSwiftFileProvider.xcframework")
         
