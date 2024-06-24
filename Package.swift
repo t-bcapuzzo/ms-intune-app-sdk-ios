@@ -9,19 +9,19 @@ let package = Package(
     products: [
         .library(name: "IntuneMAMSwift",
                  type: .dynamic,
-                 targets: ["IntuneMAMSwift"]),
+                 targets: ["IntuneMAMSwift", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMStatic",
                  type: .static,
-                 targets: ["IntuneMAMStatic"]),
+                 targets: ["IntuneMAMStatic", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMTelemetry",
                  type: nil,
                  targets: ["IntuneMAMTelemetry"]),
         .library(name: "libIntuneMAMSwift",
                  type: .static,
-                 targets: ["libIntuneMAMSwift"]),
+                 targets: ["libIntuneMAMSwift", "IntuneMAMSwiftStub", "IntuneMAMResources"]),
         .library(name: "libIntuneMAMSwiftFileProvider",
                  type: .static,
-                 targets: ["libIntuneMAMSwiftFileProvider"])
+                 targets: ["libIntuneMAMSwiftFileProvider", "IntuneMAMSwiftStub", "IntuneMAMResources"])
     ],
     dependencies: [
         .package(path: "./IntuneMAMSwiftStub.xcframework")
