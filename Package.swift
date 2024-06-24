@@ -4,20 +4,27 @@ import PackageDescription
 let package = Package(
     name: "IntuneMAM",
     platforms: [
-        .macOS(.v10_15),
-        .iOS(.v14)
+        .iOS(.v15)
     ],
     products: [
-        .library(name: "IntuneMAMSwift", 
+        .library(name: "IntuneMAMSwift",
+                 type: .dynamic,
                  targets: ["IntuneMAMSwift"]),
-        .library(name: "IntuneMAMStatic", 
+        .library(name: "IntuneMAMStatic",
+                 type: .static,
                  targets: ["IntuneMAMStatic"]),
-        .library(name: "IntuneMAMTelemetry", 
+        .library(name: "IntuneMAMTelemetry",
+                 type: nil,
                  targets: ["IntuneMAMTelemetry"]),
-        .library(name: "libIntuneMAMSwift", 
+        .library(name: "libIntuneMAMSwift",
+                 type: .static,
                  targets: ["libIntuneMAMSwift"]),
-        .library(name: "libIntuneMAMSwiftFileProvider", 
+        .library(name: "libIntuneMAMSwiftFileProvider",
+                 type: .static,
                  targets: ["libIntuneMAMSwiftFileProvider"])
+    ],
+    dependencies: [
+        .package(path: "./IntuneMAMSwiftStub.xcframework")
     ],
     targets: [
         // Local Binary Packages
@@ -25,11 +32,9 @@ let package = Package(
                       path: "./IntuneMAMSwiftStub.xcframework"
                      ),
         .binaryTarget(name: "IntuneMAMSwift",
-                      dependencies: ["IntuneMAMSwiftStub"],
                       path: "./IntuneMAMSwift.xcframework"
                      ),
         .binaryTarget(name: "IntuneMAMStatic",
-                      dependencies: ["IntuneMAMSwiftStub"],
                       path: "./IntuneMAMStatic.xcframework"
                      ),
         .binaryTarget(name: "IntuneMAMTelemetry",
@@ -39,13 +44,9 @@ let package = Package(
                       path: "./IntuneMAMResources.bundle"
                      ),
         .binaryTarget(name: "libIntuneMAMSwift",
-                      dependencies: ["IntuneMAMSwiftStub", 
-                                     "IntuneMAMResources"],
                       path: "./libIntuneMAMSwift.xcframework"
                      ),
         .binaryTarget(name: "libIntuneMAMSwiftFileProvider",
-                      dependencies: ["IntuneMAMSwiftStub", 
-                                     "IntuneMAMResources"],
                       path: "./libIntuneMAMSwiftFileProvider.xcframework"
                      )
         
