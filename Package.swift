@@ -11,20 +11,14 @@ let package = Package(
                  type: .dynamic,
                  targets: ["IntuneMAMSwift", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMStatic",
-                 type: .static,
+                 type: .dynamic,
                  targets: ["IntuneMAMStatic", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMTelemetry",
-                 type: nil,
+                 type: .dynamic,
                  targets: ["IntuneMAMTelemetry"]),
-        .library(name: "libIntuneMAMSwift",
-                 type: .static,
-                 targets: ["libIntuneMAMSwift", "IntuneMAMSwiftStub", "IntuneMAMResources"]),
         .library(name: "libIntuneMAMSwiftFileProvider",
                  type: .static,
                  targets: ["libIntuneMAMSwiftFileProvider", "IntuneMAMSwiftStub", "IntuneMAMResources"])
-    ],
-    dependencies: [
-        .package(path: "./IntuneMAMSwiftStub.xcframework")
     ],
     targets: [
         // Local Binary Packages
@@ -43,16 +37,8 @@ let package = Package(
         .binaryTarget(name: "IntuneMAMResources",
                       path: "./IntuneMAMResources.bundle"
                      ),
-        .binaryTarget(name: "libIntuneMAMSwift",
-                      path: "./libIntuneMAMSwift.xcframework"
-                     ),
         .binaryTarget(name: "libIntuneMAMSwiftFileProvider",
                       path: "./libIntuneMAMSwiftFileProvider.xcframework"
                      )
-        
-        // Remote Binary Packages
-        // .binaryTarget(name: "IntuneMAM",
-        //              url: "https://github.com/microsoftconnect/ms-intune-app-sdk-ios/releases/download/t3/??.zip",
-        //              checksum: "INCOMPLETE"),
     ]
 )
