@@ -8,17 +8,17 @@ let package = Package(
     ],
     products: [
         .library(name: "IntuneMAMSwift",
-                 type: .dynamic,
+                 // type: .dynamic,
                  targets: ["IntuneMAMSwift", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMStatic",
-                 type: .dynamic,
+                 // type: .dynamic,
                  targets: ["IntuneMAMStatic", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMTelemetry",
-                 type: .dynamic,
+                 // type: .dynamic,
                  targets: ["IntuneMAMTelemetry"]),
         .library(name: "libIntuneMAMSwiftFileProvider",
-                 type: .static,
-                 targets: ["libIntuneMAMSwiftFileProvider", "IntuneMAMSwiftStub", "IntuneMAMResources"])
+                 // type: .static,
+                 targets: ["libIntuneMAMSwiftFileProvider", "IntuneMAMSwiftStub"])
     ],
     targets: [
         // Local Binary Packages
@@ -34,9 +34,9 @@ let package = Package(
         .binaryTarget(name: "IntuneMAMTelemetry",
                       path: "./IntuneMAMTelemetry.xcframework"
                      ),
-        .binaryTarget(name: "IntuneMAMResources",
-                      path: "./IntuneMAMResources.bundle"
-                     ),
+        // .binaryTarget(name: "IntuneMAMResources",
+                      // path: "./IntuneMAMResources.bundle"
+                     // ),
         .binaryTarget(name: "libIntuneMAMSwiftFileProvider",
                       path: "./libIntuneMAMSwiftFileProvider.xcframework"
                      )
