@@ -8,16 +8,16 @@ let package = Package(
     ],
     products: [
         .library(name: "IntuneMAMSwift",
-                 // type: .dynamic,
+                 type: .dynamic,
                  targets: ["IntuneMAMSwift", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMStatic",
-                 // type: .dynamic,
+                 type: .static,
                  targets: ["IntuneMAMStatic", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMTelemetry",
-                 // type: .dynamic,
+                 type: .dynamic,
                  targets: ["IntuneMAMTelemetry"]),
         .library(name: "libIntuneMAMSwiftFileProvider",
-                 // type: .static,
+                 type: .static,
                  targets: ["libIntuneMAMSwiftFileProvider", "IntuneMAMSwiftStub"])
     ],
     targets: [
