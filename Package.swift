@@ -1,4 +1,4 @@
-// swift-tools-version:5.7
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
@@ -8,16 +8,12 @@ let package = Package(
     ],
     products: [
         .library(name: "IntuneMAMSwift",
-                 // type: .dynamic,
                  targets: ["IntuneMAMSwift", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMStatic",
-                 // type: .static,
                  targets: ["IntuneMAMStatic", "IntuneMAMSwiftStub"]),
         .library(name: "IntuneMAMTelemetry",
-                 // type: .dynamic,
                  targets: ["IntuneMAMTelemetry"]),
         .library(name: "libIntuneMAMSwiftFileProvider",
-                 // type: .static,
                  targets: ["libIntuneMAMSwiftFileProvider", "IntuneMAMSwiftStub"])
     ],
     targets: [
@@ -34,9 +30,6 @@ let package = Package(
         .binaryTarget(name: "IntuneMAMTelemetry",
                       path: "./IntuneMAMTelemetry.xcframework"
                      ),
-        // .binaryTarget(name: "IntuneMAMResources",
-                      // path: "./IntuneMAMResources.bundle"
-                     // ),
         .binaryTarget(name: "libIntuneMAMSwiftFileProvider",
                       path: "./libIntuneMAMSwiftFileProvider.xcframework"
                      )
